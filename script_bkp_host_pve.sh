@@ -1,7 +1,9 @@
 #!/bin/bash  
-# Backup de configurações críticas do Proxmox VE 9.0 (nó único)  
-# Autor: Lucas Tavares - Revisado para boas práticas
-# Email: lucas@fkmais.com.br  
+# Resumo: Este script automatiza o backup das configurações críticas de um nó Proxmox VE.
+# Ele coleta arquivos de configuração importantes, lista de pacotes e status de VMs,
+# compacta tudo em um arquivo .tar.gz, gera um checksum e remove backups antigos.
+# Autor: Lucas Tavares
+# Email: lucas@fkmais.com.br
 # Versao: v1.2 - 08-09-2025
   
 set -euo pipefail  
