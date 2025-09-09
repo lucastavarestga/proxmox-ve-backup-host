@@ -1,5 +1,5 @@
 # Script de Backup - Host - Proxmox VE
-Este repositório contém um script script_bkp_host_pve.sh para executar o backup de arquivos úteis do Proxmox VE.
+Este script em Bash automatiza o backup das configurações essenciais de um nó Proxmox VE. Ele foca nos arquivos de sistema e metadados que são cruciais para a reconstrução do ambiente em caso de falha ou modificação mal sucesdida.
 
 Seguem as instruções para download e uso do script.
 
@@ -54,18 +54,18 @@ wget https://raw.githubusercontent.com/lucastavarestga/proxmox-inventario-pve/ma
 nano /root/scripts/script_bkp_host_pve.sh
 ```
 
-5. Resumo
-O relatório gerado incluirá:
+5. Resumo 📝
 
-Informações do sistema e do Proxmox VE
-Informações sobre discos e armazenamento (incluindo configuração de LVM e ZFS)
-Informações de rede
-Detalhes sobre máquinas virtuais e containers LXC
-Status dos serviços do Proxmox e informações de cluster
-Informações de usuários e autenticação
-Registro de auditoria e logs
+O backup inclui:
 
-Para qualquer dúvida ou contato, você pode me encontrar em 
+  Lista dos pacotes APT instalados (dpkg --get-selections).
+  Versões dos pacotes do Proxmox VE (pveversion).
+  Lista das VMs em execução e parados (qm list).
+  Arquivos de configuração do /etc/pve e de rede.
+  Configurações de sistema, como fstab, sysctl, e ssh.
+  Arquivo de log para rastreamento das operações.
+
+O script compacta todos esses arquivos em um único tarball (.tar.gz), gera um checksum SHA256 para verificação de integridade e mantém os backups por 30 dias, realizando a limpeza automática dos arquivos mais antigos.
 
 ### Qualquer dúvida, entre em contato.
 
