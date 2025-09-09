@@ -1,12 +1,14 @@
 # Script de Backup - Host - Proxmox VE
-Este script em Bash automatiza o backup das configurações essenciais de um nó Proxmox VE. Ele foca nos arquivos de sistema e metadados que são cruciais para a reconstrução do ambiente em caso de falha ou modificação mal sucesdida.
+Este script em Bash automatiza o backup das configurações essenciais de um nó Proxmox VE. 
+
+O foca nos arquivos de sistema e metadados que são cruciais para a reconstrução do ambiente em caso de falha ou modificação "Mal sucedida".
 
 Seguem as instruções para download e uso do script.
 
 1. Baixar o Arquivo
 Para baixar o arquivo script_bkp_host_pve.sh, você pode usar o curl ou o wget diretamente do terminal:
 
-- Usando curl
+- Baixando via curl
 ```
 mkdir /root/scripts
 cd /root/scripts
@@ -18,7 +20,6 @@ curl -O https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host
 mkdir /root/scripts
 cd /root/scripts
 wget https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh```
-- Ou usando wget
 ```
 
 2. Definir Permissões
@@ -52,11 +53,10 @@ Agilizando a vida, baixando arquivo, setando permissão, executando :
 mkdir /root/scripts
 cd /root/scripts
 wget https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh
-nano /root/scripts/script_bkp_host_pve.sh
+chmod +x /root/scripts/script_bkp_host_pve.sh
 ```
 
 5. Agendamento, para isso usaremos o comando "crontab -e":
-
 ```
 crontab -e
 ```
@@ -72,12 +72,12 @@ crontab -e
 
 O backup inclui:
 
-  Lista dos pacotes APT instalados (dpkg --get-selections).
-  Versões dos pacotes do Proxmox VE (pveversion).
-  Lista das VMs em execução e parados (qm list).
-  Arquivos de configuração do /etc/pve e de rede.
-  Configurações de sistema, como fstab, sysctl, e ssh.
-  Arquivo de log para rastreamento das operações.
+  * Lista dos pacotes APT instalados (dpkg --get-selections).
+  * Versões dos pacotes do Proxmox VE (pveversion).
+  * Lista das VMs em execução e parados (qm list).
+  * Arquivos de configuração do /etc/pve e de rede.
+  * Configurações de sistema, como fstab, sysctl, e ssh.
+  * Arquivo de log para rastreamento das operações.
 
 O script compacta todos esses arquivos em um único tarball (.tar.gz), gera um checksum SHA256 para verificação de integridade e mantém os backups por 30 dias, realizando a limpeza automática dos arquivos mais antigos.
 
