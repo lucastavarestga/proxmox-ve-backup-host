@@ -18,6 +18,8 @@ curl -O https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host
 mkdir /root/scripts
 cd /root/scripts
 wget https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh```
+- Ou usando wget
+```
 
 2. Definir Permissões
 Setando as permissõs:
@@ -53,7 +55,20 @@ wget https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/re
 nano /root/scripts/script_bkp_host_pve.sh
 ```
 
-5. Resumo 📝
+5. Agendamento, para isso usaremos o comando "crontab -e":
+
+```
+crontab -e
+```
+
+6. Adicione a linha abaixo, salve e saia:
+```
+# Backup configs  
+45 23 * * * /usr/bin/bash /root/scripts/script_bkp_host_pve.sh 
+45 11 * * * /usr/bin/bash /root/scripts/script_bkp_host_pve.sh
+```
+
+7. Resumo 📝
 
 O backup inclui:
 
@@ -71,6 +86,7 @@ O script compacta todos esses arquivos em um único tarball (.tar.gz), gera um c
 <a href="mailto:lucastavarestga@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 <a href="https://www.linkedin.com/in/lucastavarestga" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 <a href="https://youtube.com/@lucastavaressoares" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
+<a href="https://youtube.com/@osysadmin" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
 
 Youtube MasterMindTI
 
