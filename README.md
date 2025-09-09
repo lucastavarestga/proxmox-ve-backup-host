@@ -10,15 +10,14 @@ Para baixar o arquivo script_bkp_host_pve.sh, você pode usar o curl ou o wget d
 ```
 mkdir /root/scripts
 cd /root/scripts
-curl -O [https://raw.githubusercontent.com/lucastavarestga/proxmox-inventario-pve/main/inventario_proxmox_ve.sh](https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh)
+curl -O https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh
 ```
 
 - Ou usando wget
 ```
 mkdir /root/scripts
 cd /root/scripts
-wget [https://raw.githubusercontent.com/lucastavarestga/proxmox-inventario-pve/main/inventario_proxmox_ve.sh](https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh)
-```
+wget https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh```
 
 2. Definir Permissões
 Setando as permissõs:
@@ -50,7 +49,7 @@ Agilizando a vida, baixando arquivo, setando permissão, executando :
 ```
 mkdir /root/scripts
 cd /root/scripts
-wget [https://raw.githubusercontent.com/lucastavarestga/proxmox-inventario-pve/main/inventario_proxmox_ve.sh](https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh)
+wget https://raw.githubusercontent.com/lucastavarestga/proxmox-ve-backup-host/refs/heads/main/script_bkp_host_pve.sh
 nano /root/scripts/script_bkp_host_pve.sh
 ```
 
